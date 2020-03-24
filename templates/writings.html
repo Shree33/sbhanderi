@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block stylesheet %}
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+{% endblock %}
+
+{% block activeHeader %}
+    <a class="nav-link" href="{% url 'home' %}">Home</a>
+    <a class="nav-link" href="{% url 'about me' %}">Now</a>
+    <a class="nav-link active" href="{% url 'writings' %}">Writings</a>
+{% endblock activeHeader %}
+
+{% block content %}
+  {% for post in posts %}
+    <tr>
+      <td>
+        <small class="text-muted d-block"> <a href="{% url 'post' post.pk %}">{{ post.subject }} </a> {{ post.last_updated }}</small>
+      </td>
+    </tr>
+  {% endfor %}
+<!--   <table class="table">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Post</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for post in posts %}
+        <tr>
+          <td>
+            <small class="text-muted d-block">{{ post.subject }}</small>
+            <small class="text-muted d-block">{{ post.category }}</small>
+          </td>
+          <td class="align-middle">
+            {{ post.lastupdated }}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table> -->
+{% endblock %}

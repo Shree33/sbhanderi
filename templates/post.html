@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block stylesheet %}
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+{% endblock %}
+
+{% block activeHeader %}
+    <a class="nav-link" href="{% url 'home' %}">Home</a>
+    <a class="nav-link" href="{% url 'about me' %}">Now</a>
+    <a class="nav-link active" href="{% url 'writings' %}">Writings</a>
+{% endblock activeHeader %}
+
+{% block content %}
+<h3>{{ post.subject }} </h3>
+<small> {{ post.category }} </small>
+<p> {{ post.body }} </p>
+{% endblock %}
+

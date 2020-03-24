@@ -1,0 +1,34 @@
+{% load static %}<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}Shree Bhanderi{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Peralta" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+    {% block stylesheet %}    {% endblock %}
+  </head>
+  <body>
+    {% block body %}
+    
+    <header class="masthead mb-auto">
+    <div class="inner">
+      <h3 class="name container-fluid">Shreenath Bhanderi</h3>
+      <nav class="nav nav-masthead justify-content-center">
+      {% block activeHeader %}
+      {% endblock activeHeader %}
+      </nav>
+    </div>
+    
+    </nav>
+      <div class="container">
+        {% block content %}
+        {% endblock %}
+      </div>
+    {% endblock body %}  
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    {% block javascript %}{% endblock %} 
+  </body>
+</html>

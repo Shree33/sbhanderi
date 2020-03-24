@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block stylesheet %}
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+{% endblock stylesheet %}
+
+{% block activeHeader %}
+    <a class="nav-link active" href="{% url 'home' %}">Home</a>
+    <a class="nav-link" href="{% url 'about me' %}">Now</a>
+    <a class="nav-link" href="{% url 'writings' %}">Writings</a>
+{% endblock activeHeader %}
+
+{% block content %}
+
+<p> Hi. My name is Shreenath Bhanderi and this my little hole of the internet. I like tech, books, and learning. when I'm tired of being a nerd, I run and perform improv poorly. Learn more about me <a href="{% url 'about me' %}"> here </a>. </p> 
+<p> I like finding things and thinking about things. Sometimes I'm even motivated to share them  <a href="{% url 'writings' %}"> here </a>. </p>
+<!-- Add something that directs you to the last thing I wrote was -->
+{% endblock content %}
