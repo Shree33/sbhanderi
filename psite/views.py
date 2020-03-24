@@ -16,7 +16,7 @@ def post(request, pk):
     return render(request, 'post.html', {'post':post})
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'index.html')
 
 def about_me(request):
     return render(request, 'about_me.html')
