@@ -20,7 +20,7 @@ from psite import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^$', views.home, name='index'),
+    url(r'^$', views.home, name='home'),
     url(r'^about_me$', views.about_me, name='about me'), 
     url(r'^writings$', views.PostListView.as_view(), name='writings'), 
     re_path(r'^writings/(?P<pk>\d+)/$', views.post, name='post'),
