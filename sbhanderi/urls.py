@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path
-from django.conf.urls import url
+from django.conf.urls import url, include
 from psite import views
 
 urlpatterns = [
@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^about_me$', views.about_me, name='about me'), 
     url(r'^writings$', views.PostListView.as_view(), name='writings'), 
     re_path(r'^writings/(?P<pk>\d+)/$', views.post, name='post'),
+    url(r'^markdownx/', include('markdownx.urls')),
 ]
