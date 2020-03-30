@@ -15,6 +15,6 @@
 {% block content %}
 <h3>{{ post.subject }} </h3>
 <small> {{ post.category }} </small>
-<p> {{ post.body }} </p>
+{{ post.get_body_as_markdown }}
 {% endblock %}
 

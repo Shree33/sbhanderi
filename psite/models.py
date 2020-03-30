@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.html import mark_safe
+from markdownx.models import MarkdownxField
 from markdown import markdown
 
 
@@ -17,7 +18,7 @@ class Categories(models.Model):
 
 class Post(models.Model):
     subject = models.CharField(max_length=255)
-    body = models.TextField(max_length=100000)
+    body = MarkdownxField()
     category = models.ForeignKey(Categories, related_name='topics', on_delete=models.DO_NOTHING)
     last_updated = models.DateTimeField(auto_now_add=True)
     views = models.PositiveIntegerField(default=0)
