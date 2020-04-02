@@ -17,13 +17,8 @@ import dj_database_url
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
@@ -32,6 +27,9 @@ DATABASES = {
         default=config('DATABASE_URL')
     )
 }
+
+POCKET_CONSUMER = config('POCKET_CONSUMER', default='')
+POCKET_ACCESS_TOKEN = config('POCKET_ACCESS_TOKEN', default='')
 # Application definition
 
 INSTALLED_APPS = [
@@ -123,5 +121,7 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+
 
 

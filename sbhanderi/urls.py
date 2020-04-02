@@ -25,4 +25,5 @@ urlpatterns = [
     url(r'^writings$', views.PostListView.as_view(), name='writings'), 
     re_path(r'^writings/(?P<pk>\d+)/$', views.post, name='post'),
     url(r'^markdownx/', include('markdownx.urls')),
+    url(r'^pocket_reads', views.pocket_reads, name='pocket reads')
 ]
